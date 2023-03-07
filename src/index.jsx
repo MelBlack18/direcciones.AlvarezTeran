@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import AppNavigator from './navigation/app';
+import { init } from './db';
 
 export default function App() {
     const [loaded] = useFonts({
@@ -13,6 +14,13 @@ export default function App() {
         "MontserratRegular" : require("../assets/fonts/Montserrat-Regular.ttf"),
         "MontserratSemiBold" : require("../assets/fonts/Montserrat-SemiBold.ttf")
     })
+
+    init()
+      .then(()=>{console.log("Database Initialised");})
+      .catch((err)=>{
+        console.log("Database failed to initialize")
+        console.log(err.message);
+      })
 
     if (!loaded) {
         return(

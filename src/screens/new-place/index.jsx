@@ -6,16 +6,18 @@ import { useDispatch } from 'react-redux'
 
 import ImageSelector from '../../components/ImageSelector'
 import { savePlace } from '../../store/place.slice'
+import LocationSelector from '../../components/LocationSelector'
 
 const NewPlaceScreen = ({navigation}) => {
-  dispatch = useDispatch()
+  const dispatch = useDispatch()
   const [title, setTitle] = useState("")
   const [image, setImage] = useState(null);
+  const [coords, setCoords] = useState(null);
 
   const handleTitleChange = text => setTitle(text)
 
   const handleSubmit = () => {
-    dispatch(savePlace(title, image))
+    dispatch(savePlace(title, image, coords))
     navigation.navigate("Direcciones")
   }
 
@@ -23,16 +25,21 @@ const NewPlaceScreen = ({navigation}) => {
     setImage(uri)
   }
 
+  const onLocation = (location) => {
+    setCoords(location)
+  }
+
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text style={styles.label}>Ingrese una nueva dirección</Text>
+        <Text style={styles.label}>Ingrese el nombre de la dirección</Text>
         <TextInput 
-          placeholder='Calle Falsa 123'  
+          placeholder='Casa'  
           style={styles.input}
           onChangeText={handleTitleChange} 
         />
         <ImageSelector onImage={onImage} />
+        <LocationSelector onLocation={onLocation} />
         <Button 
           title='Guardar' 
           color={THEME.colors.DARK_PINK} 

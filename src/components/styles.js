@@ -14,6 +14,10 @@ export const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent: 'center',
     },
+    selectorContainer:{
+      marginBottom: 10,
+      width:"100%",
+    },
     preview:{
       width:"100%",
       height: 200,
@@ -26,5 +30,40 @@ export const styles = StyleSheet.create({
     image:{
       width: "100%",
       height:"100%"
+    },
+    placeItem: {
+      borderBottomColor: THEME.colors.CHERRY_BLOSSOM,
+      borderBottomWidth: 1,
+      flexDirection: "row",
+      alignItems:"center"
+    },
+    imageItem:{
+      width: 70,
+      height: 70,
+      borderRadius: 35,
+      backgroundColor: THEME.colors.DARK_PINK
+    },
+    info: {
+      marginLeft: 25,
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "flex-start"
+    },
+    title: {
+      color: THEME.colors.CHERRY_BLOSSOM,
+      fontSize: 18,
+      marginBottom: 6
+    },
+    address:{
+      color: THEME.colors.CHERRY_BLOSSOM,
+      fontSize: 16
+    },
+    mapPreview:{
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    mapImage:{
+      width: "100%",
+      height: "100%",
     }
 });

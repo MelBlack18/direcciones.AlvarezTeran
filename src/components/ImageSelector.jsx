@@ -33,7 +33,7 @@ const ImageSelector = ({onImage}) => {
     }
 
     return (
-        <View>
+        <View style={styles.selectorContainer}>
             <View style={styles.preview}>{
                 !pickedUri ? (
                     <Text>No hay imagen seleccionada</Text>

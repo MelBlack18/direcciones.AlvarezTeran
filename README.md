@@ -1,9 +1,8 @@
 # Proyecto React Native - App de Direcciones
 
-## Wirefram de la app
-
-
 ## Detalles:
+
+Esta app permite añadir direcciones y relacionarlas con una foto, mientras que las mismas persisten en una BD
 
 
 ## Librerías Instaladas:
@@ -19,3 +18,11 @@ Se utilizó esta librería para establecer la navegación entre pantallas de la 
 - **Redux**
 
 Se utilizó para el manejo de estados
+
+- **Image Picker y Location** 
+
+Para la interacción con la cámara y el servicio de ubicación del teléfono
+
+- **SQLite**
+
+Se utiliza para persistir datos en una BD de SQL.
